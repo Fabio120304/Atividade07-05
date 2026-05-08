@@ -1,0 +1,29 @@
+@startuml  
+
+actor View
+
+participant Controller
+
+participant Service
+
+participant Repository
+
+database SQLite
+
+View -> Controller : cadastrarFilme()
+
+Controller -> Service : cadastrar()
+
+Service -> Repository : salvar()
+
+Repository -> SQLite : INSERT filme
+
+SQLite --> Repository : confirmação
+
+Repository --> Service : sucesso
+
+Service --> Controller : sucesso
+
+Controller --> View : mensagem
+
+@enduml

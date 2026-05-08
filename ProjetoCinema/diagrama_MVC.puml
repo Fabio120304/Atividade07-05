@@ -1,0 +1,21 @@
+@startuml  
+
+rectangle View
+
+rectangle Controller
+
+rectangle Service
+
+rectangle Repository
+
+database SQLite
+
+View --> Controller
+
+Controller --> Service
+
+Service --> Repository
+
+Repository --> SQLite
+
+@enduml
